@@ -247,7 +247,11 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:2rem 3rem;display:fle
 </footer>
 
 <script>
-const API = 'https://amfumu-ira-audit-tool.hf.space';
+const API        = 'https://solar-incentive-intelligence-api.p.rapidapi.com';
+const RAPID_HOST = 'solar-incentive-intelligence-api.p.rapidapi.com';
+let ACTIVE_KEY = '';
+let ACTIVE_PLAN = 'free';
+function onPlanActivated(plan,key){ACTIVE_PLAN=plan;ACTIVE_KEY=key;}
 let currentResult = null;
 const fmt = {usd: v => '$' + Math.round(v).toLocaleString(), pct: v => (v * 100).toFixed(0) + '%'};
 function $(id){ return document.getElementById(id); }
@@ -274,7 +278,7 @@ async function runCalculation(){
   $('results').classList.remove('show');$('loading').classList.add('show');$('calc-btn').disabled=true;
   const body={state,system_cost:cost,system_kw:kw,annual_kwh:kwh,install_year:year,system_type:type,energy_community:$('cb-ec').checked,domestic_content:$('cb-dc').checked,low_income_category:$('cb-li2').checked?2:$('cb-li1').checked?1:null};
   let data=null;
-  for(let i=0;i<3;i++){try{const ctrl=new AbortController(),tid=setTimeout(()=>ctrl.abort(),55000);const r=await fetch(API+'/full-stack',{method:'POST',headers:{'Content-Type':'application/json','X-API-Key':'PRO-INCENTIVE-XYZ'},body:JSON.stringify(body),signal:ctrl.signal});clearTimeout(tid);if(r.ok){data=await r.json();break;}}catch(e){if(i<2)await new Promise(res=>setTimeout(res,8000));}}
+  for(let i=0;i<3;i++){try{const ctrl=new AbortController(),tid=setTimeout(()=>ctrl.abort(),55000);const r=await fetch(API+'/full-stack',{method:'POST',headers:{'Content-Type':'application/json','X-RapidAPI-Key':ACTIVE_KEY||'','X-RapidAPI-Host':RAPID_HOST},body:JSON.stringify(body),signal:ctrl.signal});clearTimeout(tid);if(r.ok){data=await r.json();break;}}catch(e){if(i<2)await new Promise(res=>setTimeout(res,8000));}}
   $('loading').classList.remove('show');$('calc-btn').disabled=false;
   if(!data){alert('Server is waking up. Please wait 30 seconds and try again.');return;}
   currentResult={data,project:{project_name:$('project-name').value||'Solar Project',state,system_type:type,system_cost:cost,system_kw:kw,annual_kwh:kwh,install_year:year}};
@@ -315,7 +319,7 @@ async function submitGateAndDownload(){
   const btn=document.getElementById('gate-submit-btn');btn.disabled=true;btn.textContent='Processing...';
   try{const{data,project}=currentResult;await fetch('https://formspree.io/f/xdawbwpe',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({type:'ira_audit_lead',name,email,role,state:project.state,system_type:project.system_type,system_cost:project.system_cost,system_kw:project.system_kw,effective_itc:data.federal_itc?.effective_itc_pct,itc_amount:data.federal_itc?.effective_itc_amount,adders_applied:(data.federal_itc?.adders_applied||[]).filter(a=>a.pct>0).map(a=>a.name).join(', '),submitted_at:new Date().toISOString(),source:'IRA Audit Tool'})});}catch(e){}
   btn.textContent='Generating PDF...';
-  try{const{data,project}=currentResult;const r=await fetch('https://amfumu-ira-audit-tool.hf.space/generate-pdf',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({project_data:project,api_data:data})});if(r.ok){const blob=await r.blob(),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`IRA_ITC_Memo_${project.state}_${new Date().toISOString().slice(0,10)}.pdf`;document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);document.getElementById('gate-success').style.display='block';btn.style.display='none';setTimeout(hideEmailGate,3000);}else{alert('PDF generation failed. Please try again.');btn.disabled=false;btn.textContent='Download My ITC Memo';}}catch(e){alert('Connection error. Please try again.');btn.disabled=false;btn.textContent='Download My ITC Memo';}
+  try{const{data,project}=currentResult;const r=await fetch(`${API}/generate-pdf`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({project_data:project,api_data:data})});if(r.ok){const blob=await r.blob(),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`IRA_ITC_Memo_${project.state}_${new Date().toISOString().slice(0,10)}.pdf`;document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);document.getElementById('gate-success').style.display='block';btn.style.display='none';setTimeout(hideEmailGate,3000);}else{alert('PDF generation failed. Please try again.');btn.disabled=false;btn.textContent='Download My ITC Memo';}}catch(e){alert('Connection error. Please try again.');btn.disabled=false;btn.textContent='Download My ITC Memo';}
 }
 </script>
 
@@ -405,7 +409,7 @@ async function submitGateAndDownload(){
 </div>
 
 <script>
-var ST={pricingUrl:'https://rapidapi.com/bethelnedi/api/solar-incentive-intelligence-api/pricing',apiEndpoint:'https://amfumu-solar-incentive-api.hf.space',proPrice:'$29.99',ultraPrice:'$149',proFeats:["Full ITC stack — base + all adders","State incentives — all 50 states","PDF memo generation","1,000 API calls per hour"],ultraFeats:["White label IRA Audit Tool on your domain","CPA firm and tax advisor branding","Embed in client portals","Requires approval"],currentKey:'',currentPlan:'free'};
+var ST={pricingUrl:'https://rapidapi.com/bethelnedi/api/solar-incentive-intelligence-api/pricing',apiEndpoint:'https://solar-incentive-intelligence-api.p.rapidapi.com',proPrice:'$29.99',ultraPrice:'$149',proFeats:["Full ITC stack — base + all adders","State incentives — all 50 states","PDF memo generation","1,000 API calls per hour"],ultraFeats:["White label IRA Audit Tool on your domain","CPA firm and tax advisor branding","Embed in client portals","Requires approval"],currentKey:'',currentPlan:'free'};
 function stOpen(){document.getElementById('stOverlay').classList.add('open');stRender();}
 function stClose(){document.getElementById('stOverlay').classList.remove('open');}
 function stBgClose(e){if(e.target===document.getElementById('stOverlay'))stClose();}
@@ -455,6 +459,24 @@ stRender();
   var hdr=document.querySelector('.header-right');
   if(wrap&&hdr){hdr.appendChild(wrap);}
 })();
+
+// ── FREE DAILY LIMIT ──
+// Free users (no key) get 1 analysis per day to protect RapidAPI quota
+function checkFreeLimit() {
+  const key = 'st_free_used_' + new Date().toISOString().slice(0,10);
+  const used = parseInt(localStorage.getItem(key) || '0');
+  return { used, key, allowed: used < 1 };
+}
+function markFreeUsed() {
+  const key = 'st_free_used_' + new Date().toISOString().slice(0,10);
+  localStorage.setItem(key, '1');
+}
+function freeLimitMessage() {
+  return `<div class="error-box" style="display:flex;align-items:center;justify-content:space-between;gap:1rem">
+    <span>&#9888; Free limit reached — 1 analysis per day without a key. Get Pro for unlimited access.</span>
+    <button onclick="stOpen()" style="background:#e8a020;color:#0a0c0f;border:none;font-family:inherit;font-size:10px;font-weight:600;padding:6px 14px;cursor:pointer;white-space:nowrap;flex-shrink:0">Get Pro</button>
+  </div>`;
+}
 </script>
 </body>
 </html>
