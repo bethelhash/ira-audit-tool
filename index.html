@@ -6,497 +6,114 @@
 <title>IRA Tax Credit Intelligence — SolarTruth</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ink:#08111E;--ink2:#0F1E30;--ink3:#1A2E42;
-  --teal:#00C9AE;--teal2:rgba(0,201,174,0.08);
-  --gold:#E8A020;--gold2:rgba(232,160,32,0.1);
-  --slate:#4A6175;--mist:#8FA3B4;--fog:#C8D6E0;
-  --paper:#F4F7F9;--white:#FFFFFF;
-  --red:#D94F4F;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{
-  font-family:'IBM Plex Sans',sans-serif;
-  background:var(--ink);
-  color:var(--white);
-  font-size:14px;
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-  min-height:100vh;
-}
-
-/* ── HEADER ── */
-header{
-  padding:0 3rem;
-  height:60px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  border-bottom:1px solid rgba(255,255,255,0.06);
-  position:sticky;top:0;z-index:100;
-  background:rgba(8,17,30,0.96);
-  backdrop-filter:blur(16px);
-}
+:root{--ink:#08111E;--ink2:#0F1E30;--ink3:#1A2E42;--teal:#00C9AE;--teal2:rgba(0,201,174,0.08);--gold:#E8A020;--gold2:rgba(232,160,32,0.1);--slate:#4A6175;--mist:#8FA3B4;--fog:#C8D6E0;--paper:#F4F7F9;--white:#FFFFFF;--red:#D94F4F;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'IBM Plex Sans',sans-serif;background:var(--ink);color:var(--white);font-size:14px;line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh;}
+header{padding:0 3rem;height:60px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;z-index:100;background:rgba(8,17,30,0.96);backdrop-filter:blur(16px);}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
-.logo-mark{
-  width:32px;height:32px;
-  background:var(--gold);
-  border-radius:6px;
-  display:flex;align-items:center;justify-content:center;
-}
-.logo-name{
-  font-family:'Playfair Display',serif;
-  font-size:17px;font-weight:700;
-  color:var(--white);letter-spacing:-0.2px;
-}
+.logo-mark{width:32px;height:32px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;}
+.logo-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--white);letter-spacing:-0.2px;}
 .logo-name em{color:var(--gold);font-style:normal;}
 .header-right{display:flex;align-items:center;gap:20px;}
 .nav-link{font-size:12px;color:var(--mist);text-decoration:none;letter-spacing:0.3px;transition:color 0.2s;}
 .nav-link:hover{color:var(--teal);}
-.nav-pill{
-  font-size:10px;font-weight:600;letter-spacing:1px;
-  color:var(--teal);
-  border:1px solid rgba(0,201,174,0.3);
-  padding:4px 14px;border-radius:20px;
-  text-transform:uppercase;
-}
-
-/* ── HERO ── */
-.hero{
-  padding:5rem 3rem 0;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:4rem;
-  max-width:1160px;
-  margin:0 auto;
-  align-items:start;
-}
+.nav-pill{font-size:10px;font-weight:600;letter-spacing:1px;color:var(--teal);border:1px solid rgba(0,201,174,0.3);padding:4px 14px;border-radius:20px;text-transform:uppercase;}
+.hero{padding:5rem 3rem 0;display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1160px;margin:0 auto;align-items:start;}
 @media(max-width:900px){.hero{grid-template-columns:1fr;padding:3rem 1.5rem 0;}}
-
-.hero-left{}
-.hero-label{
-  font-size:10px;font-weight:600;
-  letter-spacing:2px;text-transform:uppercase;
-  color:var(--teal);
-  display:flex;align-items:center;gap:8px;
-  margin-bottom:1.5rem;
-}
-.hero-label::before{
-  content:'';width:24px;height:1px;background:var(--teal);
-}
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2rem,4vw,3.2rem);
-  font-weight:700;
-  line-height:1.15;
-  letter-spacing:-0.5px;
-  margin-bottom:1.5rem;
-  color:var(--white);
-}
-.hero h1 .gold{color:var(--gold);}
-.hero h1 .line2{display:block;}
-
-.hero-desc{
-  font-size:14px;
-  color:var(--mist);
-  line-height:1.8;
-  margin-bottom:2.5rem;
-  max-width:440px;
-}
-
-.stat-row{
-  display:flex;gap:2rem;
-  padding-top:2rem;
-  border-top:1px solid rgba(255,255,255,0.07);
-}
-.stat-item{}
-.stat-num{
-  font-family:'Playfair Display',serif;
-  font-size:2rem;font-weight:700;
-  color:var(--gold);letter-spacing:-0.5px;
-  display:block;line-height:1;
-}
+.hero-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:8px;margin-bottom:1.5rem;}
+.hero-label::before{content:'';width:24px;height:1px;background:var(--teal);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;line-height:1.15;letter-spacing:-0.5px;margin-bottom:1.5rem;color:var(--white);}
+.hero h1 .gold{color:var(--gold);}.hero h1 .line2{display:block;}
+.hero-desc{font-size:14px;color:var(--mist);line-height:1.8;margin-bottom:2.5rem;max-width:440px;}
+.stat-row{display:flex;gap:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.07);}
+.stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--gold);letter-spacing:-0.5px;display:block;line-height:1;}
 .stat-label{font-size:11px;color:var(--mist);letter-spacing:0.3px;margin-top:4px;}
-
-/* ── FORM CARD ── */
-.form-card{
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:16px;
-  overflow:hidden;
-  backdrop-filter:blur(8px);
-  margin-top:0;
-}
-
-.form-card-header{
-  padding:1.4rem 1.8rem;
-  border-bottom:1px solid rgba(255,255,255,0.07);
-  display:flex;align-items:center;gap:10px;
-}
+.form-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;backdrop-filter:blur(8px);}
+.form-card-header{padding:1.4rem 1.8rem;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:10px;}
 .fch-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);}
-.form-card-header h2{
-  font-size:13px;font-weight:600;color:var(--white);
-  letter-spacing:0.2px;
-}
-
+.form-card-header h2{font-size:13px;font-weight:600;color:var(--white);letter-spacing:0.2px;}
 .form-inner{padding:1.8rem;}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
 .form-row.single{grid-template-columns:1fr;}
-
 .field{display:flex;flex-direction:column;gap:6px;}
-.field label{
-  font-size:10px;font-weight:600;
-  color:var(--mist);letter-spacing:0.8px;text-transform:uppercase;
-}
-input,select{
-  height:42px;
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:8px;
-  padding:0 14px;
-  font-family:'IBM Plex Sans',sans-serif;
-  font-size:13px;color:var(--white);
-  outline:none;width:100%;
-  transition:all 0.18s;
-  appearance:none;-webkit-appearance:none;
-}
-input:focus,select:focus{
-  border-color:var(--teal);
-  background:rgba(0,201,174,0.05);
-  box-shadow:0 0 0 3px rgba(0,201,174,0.1);
-}
-input::placeholder{color:var(--slate);}
-select option{background:#0F1E30;color:#fff;}
-.sel-wrap{position:relative;}
-.sel-wrap::after{
-  content:'';position:absolute;right:12px;top:50%;
-  transform:translateY(-50%);
-  border-left:4px solid transparent;border-right:4px solid transparent;
-  border-top:5px solid var(--mist);pointer-events:none;
-}
-.sel-wrap select{padding-right:32px;}
-.prefix-field{position:relative;}
-.prefix-sym{
-  position:absolute;left:13px;top:50%;
-  transform:translateY(-50%);
-  color:var(--mist);font-size:13px;pointer-events:none;
-}
+.field label{font-size:10px;font-weight:600;color:var(--mist);letter-spacing:0.8px;text-transform:uppercase;}
+input,select{height:42px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0 14px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--white);outline:none;width:100%;transition:all 0.18s;appearance:none;-webkit-appearance:none;}
+input:focus,select:focus{border-color:var(--teal);background:rgba(0,201,174,0.05);box-shadow:0 0 0 3px rgba(0,201,174,0.1);}
+input::placeholder{color:var(--slate);}select option{background:#0F1E30;color:#fff;}
+.sel-wrap{position:relative;}.sel-wrap::after{content:'';position:absolute;right:12px;top:50%;transform:translateY(-50%);border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid var(--mist);pointer-events:none;}
+.sel-wrap select{padding-right:32px;}.prefix-field{position:relative;}
+.prefix-sym{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--mist);font-size:13px;pointer-events:none;}
 .prefix-field input{padding-left:24px;}
-
-/* ── SECTION LABEL ── */
-.section-label{
-  font-size:10px;font-weight:600;
-  color:var(--mist);letter-spacing:1px;text-transform:uppercase;
-  margin:1.4rem 0 0.8rem;
-  padding-top:1.2rem;
-  border-top:1px solid rgba(255,255,255,0.06);
-  display:flex;align-items:center;gap:8px;
-}
-.section-label span{
-  background:rgba(0,201,174,0.12);
-  color:var(--teal);
-  padding:2px 8px;border-radius:3px;
-  font-size:9px;
-}
-
-/* ── TOGGLE SWITCHES ── */
+.section-label{font-size:10px;font-weight:600;color:var(--mist);letter-spacing:1px;text-transform:uppercase;margin:1.4rem 0 0.8rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:8px;}
+.section-label span{background:rgba(0,201,174,0.12);color:var(--teal);padding:2px 8px;border-radius:3px;font-size:9px;}
 .adder-list{display:flex;flex-direction:column;gap:8px;margin-bottom:1.4rem;}
-
-.adder-toggle{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:12px 14px;
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.07);
-  border-radius:10px;
-  cursor:pointer;
-  transition:all 0.2s;
-  gap:12px;
-}
+.adder-toggle{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;cursor:pointer;transition:all 0.2s;gap:12px;}
 .adder-toggle:hover{border-color:rgba(255,255,255,0.14);background:rgba(255,255,255,0.05);}
-.adder-toggle.active{
-  border-color:rgba(0,201,174,0.35);
-  background:rgba(0,201,174,0.06);
-}
-.adder-toggle.disabled{opacity:0.3;pointer-events:none;}
-
-.adder-info{flex:1;}
-.adder-name{font-size:12.5px;font-weight:500;color:var(--white);margin-bottom:2px;}
+.adder-toggle.active{border-color:rgba(0,201,174,0.35);background:rgba(0,201,174,0.06);}
+.adder-info{flex:1;}.adder-name{font-size:12.5px;font-weight:500;color:var(--white);margin-bottom:2px;}
 .adder-desc{font-size:11px;color:var(--mist);line-height:1.4;}
-.adder-pct{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:13px;font-weight:500;
-  color:var(--slate);
-  white-space:nowrap;
-  margin-right:10px;
-  transition:color 0.2s;
-}
+.adder-pct{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:var(--slate);white-space:nowrap;margin-right:10px;transition:color 0.2s;}
 .adder-toggle.active .adder-pct{color:var(--teal);}
-
-/* THE TOGGLE SWITCH */
-.switch{
-  position:relative;
-  width:40px;height:22px;
-  flex-shrink:0;
-}
+.switch{position:relative;width:40px;height:22px;flex-shrink:0;}
 .switch input{opacity:0;width:0;height:0;position:absolute;}
-.switch-track{
-  position:absolute;inset:0;
-  background:rgba(255,255,255,0.1);
-  border-radius:11px;
-  transition:background 0.25s;
-  cursor:pointer;
-}
-.switch-thumb{
-  position:absolute;
-  top:3px;left:3px;
-  width:16px;height:16px;
-  background:var(--mist);
-  border-radius:50%;
-  transition:transform 0.25s, background 0.25s;
-}
+.switch-track{position:absolute;inset:0;background:rgba(255,255,255,0.1);border-radius:11px;transition:background 0.25s;cursor:pointer;}
+.switch-thumb{position:absolute;top:3px;left:3px;width:16px;height:16px;background:var(--mist);border-radius:50%;transition:transform 0.25s, background 0.25s;}
 .switch input:checked ~ .switch-track{background:var(--teal);}
-.switch input:checked ~ .switch-thumb{
-  transform:translateX(18px);
-  background:var(--white);
-}
-
-/* ── CTA ── */
-.btn-calculate{
-  width:100%;height:48px;
-  background:var(--teal);color:var(--ink);
-  border:none;border-radius:10px;
-  font-family:'IBM Plex Sans',sans-serif;
-  font-size:13.5px;font-weight:600;
-  cursor:pointer;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  transition:all 0.2s;letter-spacing:0.2px;
-}
+.switch input:checked ~ .switch-thumb{transform:translateX(18px);background:var(--white);}
+.btn-calculate{width:100%;height:48px;background:var(--teal);color:var(--ink);border:none;border-radius:10px;font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all 0.2s;letter-spacing:0.2px;}
 .btn-calculate:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(0,201,174,0.3);}
 .btn-calculate:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
-
-/* ── MAIN CONTENT AREA ── */
-.main-area{
-  max-width:1160px;
-  margin:0 auto;
-  padding:3rem 3rem 5rem;
-}
+.main-area{max-width:1160px;margin:0 auto;padding:3rem 3rem 5rem;}
 @media(max-width:900px){.main-area{padding:2rem 1.5rem 4rem;}}
-
-/* ── LOADING ── */
-.loading{
-  display:none;
-  padding:3rem;
-  text-align:center;
-}
-.loading.show{display:block;}
-.loader-ring{
-  width:48px;height:48px;
-  border:2px solid rgba(255,255,255,0.08);
-  border-top-color:var(--teal);
-  border-radius:50%;
-  animation:spin 0.9s linear infinite;
-  margin:0 auto 1rem;
-}
-@keyframes spin{to{transform:rotate(360deg);}}
-.loading p{color:var(--mist);font-size:13px;}
-
-/* ── RESULTS ── */
-.results{display:none;}
-.results.show{display:block;animation:fadeUp 0.4s ease;}
+.loading{display:none;padding:3rem;text-align:center;}.loading.show{display:block;}
+.loader-ring{width:48px;height:48px;border:2px solid rgba(255,255,255,0.08);border-top-color:var(--teal);border-radius:50%;animation:spin 0.9s linear infinite;margin:0 auto 1rem;}
+@keyframes spin{to{transform:rotate(360deg);}}.loading p{color:var(--mist);font-size:13px;}
+.results{display:none;}.results.show{display:block;animation:fadeUp 0.4s ease;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
-
-/* Results layout */
-.results-grid{
-  display:grid;
-  grid-template-columns:1fr 1.4fr;
-  gap:1.5rem;
-  margin-bottom:1.5rem;
-}
+.results-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:1.5rem;margin-bottom:1.5rem;}
 @media(max-width:900px){.results-grid{grid-template-columns:1fr;}}
-
-/* Left panel */
-.panel{
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:14px;
-  overflow:hidden;
-}
-.panel-header{
-  padding:1rem 1.4rem;
-  border-bottom:1px solid rgba(255,255,255,0.07);
-  display:flex;align-items:center;justify-content:space-between;
-}
+.panel{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;}
+.panel-header{padding:1rem 1.4rem;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:space-between;}
 .panel-title{font-size:11px;font-weight:600;color:var(--mist);letter-spacing:0.8px;text-transform:uppercase;}
-.panel-badge{
-  font-size:10px;font-weight:600;letter-spacing:0.5px;
-  padding:3px 10px;border-radius:20px;
-}
-.panel-badge.success{background:rgba(0,201,174,0.15);color:var(--teal);}
-.panel-badge.gold{background:rgba(232,160,32,0.15);color:var(--gold);}
-
-/* ITC hero number */
-.itc-hero{
-  padding:2rem 1.4rem;
-  text-align:center;
-  border-bottom:1px solid rgba(255,255,255,0.07);
-}
-.itc-pct{
-  font-family:'Playfair Display',serif;
-  font-size:5rem;font-weight:700;
-  color:var(--teal);
-  letter-spacing:-2px;line-height:1;
-  margin-bottom:4px;
-}
+.panel-badge{font-size:10px;font-weight:600;letter-spacing:0.5px;padding:3px 10px;border-radius:20px;}
+.panel-badge.success{background:rgba(0,201,174,0.15);color:var(--teal);}.panel-badge.gold{background:rgba(232,160,32,0.15);color:var(--gold);}
+.itc-hero{padding:2rem 1.4rem;text-align:center;border-bottom:1px solid rgba(255,255,255,0.07);}
+.itc-pct{font-family:'Playfair Display',serif;font-size:5rem;font-weight:700;color:var(--teal);letter-spacing:-2px;line-height:1;margin-bottom:4px;}
 .itc-label{font-size:11px;color:var(--mist);letter-spacing:0.5px;text-transform:uppercase;}
-.itc-amount{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:1.6rem;font-weight:500;
-  color:var(--gold);
-  margin-top:10px;
-}
-
-/* ITC breakdown bars */
+.itc-amount{font-family:'IBM Plex Mono',monospace;font-size:1.6rem;font-weight:500;color:var(--gold);margin-top:10px;}
 .itc-breakdown{padding:1.2rem 1.4rem;}
-.breakdown-row{
-  display:flex;align-items:center;gap:10px;
-  margin-bottom:8px;
-}
+.breakdown-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
 .br-label{font-size:11px;color:var(--mist);width:110px;flex-shrink:0;}
 .br-bar-wrap{flex:1;height:6px;background:rgba(255,255,255,0.07);border-radius:3px;overflow:hidden;}
-.br-bar{height:100%;border-radius:3px;transition:width 0.8s ease;}
-.br-bar.base{background:rgba(0,201,174,0.5);}
-.br-bar.adder{background:var(--teal);}
+.br-bar{height:100%;border-radius:3px;transition:width 0.8s ease;}.br-bar.base{background:rgba(0,201,174,0.5);}.br-bar.adder{background:var(--teal);}
 .br-val{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--white);width:36px;text-align:right;flex-shrink:0;}
-
-/* Adder stack right panel */
 .adder-stack{padding:1.2rem 1.4rem;}
-.stack-row{
-  display:flex;align-items:flex-start;gap:12px;
-  padding:10px 0;
-  border-bottom:1px solid rgba(255,255,255,0.05);
-}
+.stack-row{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
 .stack-row:last-child{border-bottom:none;}
-.stack-icon{
-  width:28px;height:28px;
-  border-radius:6px;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;font-size:12px;font-weight:700;
-  margin-top:1px;
-}
-.stack-icon.base{background:rgba(255,255,255,0.08);color:var(--mist);}
-.stack-icon.bonus{background:rgba(0,201,174,0.15);color:var(--teal);}
-.stack-icon.total{background:rgba(232,160,32,0.15);color:var(--gold);}
-.stack-info{flex:1;}
-.stack-name{font-size:12.5px;font-weight:500;color:var(--white);margin-bottom:2px;}
-.stack-cite{font-size:10.5px;color:var(--mist);}
-.stack-pct{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:13.5px;font-weight:500;
-  flex-shrink:0;
-}
-.stack-pct.teal{color:var(--teal);}
-.stack-pct.gold{color:var(--gold);}
-.stack-pct.mist{color:var(--mist);}
-
-/* Financial table */
-.fin-table{width:100%;}
-.fin-row{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:8px 1.4rem;
-  border-bottom:1px solid rgba(255,255,255,0.04);
-  font-size:12.5px;
-}
-.fin-row:last-child{border-bottom:none;}
-.fin-row.total{
-  background:rgba(232,160,32,0.06);
-  border-top:1px solid rgba(232,160,32,0.15);
-  border-bottom:none;
-  padding:12px 1.4rem;
-}
-.fin-key{color:var(--mist);}
-.fin-val{font-family:'IBM Plex Mono',monospace;font-weight:500;}
-.fin-val.teal{color:var(--teal);}
-.fin-val.gold{color:var(--gold);}
-.fin-val.white{color:var(--white);}
-.fin-val.red{color:var(--red);}
-
-/* Alert strip */
-.alert-strip{
-  background:rgba(232,160,32,0.06);
-  border:1px solid rgba(232,160,32,0.2);
-  border-radius:10px;
-  padding:1rem 1.4rem;
-  display:flex;gap:10px;align-items:flex-start;
-  margin-bottom:1.5rem;
-  font-size:12.5px;
-  color:rgba(232,160,32,0.9);
-  line-height:1.55;
-}
+.stack-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;font-weight:700;margin-top:1px;}
+.stack-icon.base{background:rgba(255,255,255,0.08);color:var(--mist);}.stack-icon.bonus{background:rgba(0,201,174,0.15);color:var(--teal);}.stack-icon.total{background:rgba(232,160,32,0.15);color:var(--gold);}
+.stack-info{flex:1;}.stack-name{font-size:12.5px;font-weight:500;color:var(--white);margin-bottom:2px;}.stack-cite{font-size:10.5px;color:var(--mist);}
+.stack-pct{font-family:'IBM Plex Mono',monospace;font-size:13.5px;font-weight:500;flex-shrink:0;}
+.stack-pct.teal{color:var(--teal);}.stack-pct.gold{color:var(--gold);}.stack-pct.mist{color:var(--mist);}
+.fin-table{width:100%;}.fin-row{display:flex;justify-content:space-between;align-items:center;padding:8px 1.4rem;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12.5px;}
+.fin-row:last-child{border-bottom:none;}.fin-row.total{background:rgba(232,160,32,0.06);border-top:1px solid rgba(232,160,32,0.15);border-bottom:none;padding:12px 1.4rem;}
+.fin-key{color:var(--mist);}.fin-val{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+.fin-val.teal{color:var(--teal);}.fin-val.gold{color:var(--gold);}.fin-val.white{color:var(--white);}.fin-val.red{color:var(--red);}
+.alert-strip{background:rgba(232,160,32,0.06);border:1px solid rgba(232,160,32,0.2);border-radius:10px;padding:1rem 1.4rem;display:flex;gap:10px;align-items:flex-start;margin-bottom:1.5rem;font-size:12.5px;color:rgba(232,160,32,0.9);line-height:1.55;}
 .alert-bar{width:3px;border-radius:2px;background:var(--gold);flex-shrink:0;align-self:stretch;min-height:20px;}
-
-/* PDF section */
-.pdf-panel{
-  background:linear-gradient(135deg, rgba(0,201,174,0.06) 0%, rgba(8,17,30,0) 60%);
-  border:1px solid rgba(0,201,174,0.15);
-  border-radius:14px;
-  padding:2rem;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:2rem;
-  flex-wrap:wrap;
-}
-.pdf-left h3{
-  font-family:'Playfair Display',serif;
-  font-size:1.2rem;font-weight:600;
-  color:var(--white);margin-bottom:0.4rem;
-}
+.pdf-panel{background:linear-gradient(135deg, rgba(0,201,174,0.06) 0%, rgba(8,17,30,0) 60%);border:1px solid rgba(0,201,174,0.15);border-radius:14px;padding:2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.pdf-left h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;color:var(--white);margin-bottom:0.4rem;}
 .pdf-left p{font-size:12.5px;color:var(--mist);line-height:1.6;max-width:480px;}
 .pdf-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.8rem;}
-.pdf-chip{
-  font-size:10.5px;color:var(--mist);
-  border:1px solid rgba(255,255,255,0.08);
-  padding:3px 10px;border-radius:4px;
-}
-.btn-pdf{
-  height:46px;padding:0 2rem;
-  background:var(--gold);color:var(--ink);
-  border:none;border-radius:10px;
-  font-family:'IBM Plex Sans',sans-serif;
-  font-size:13px;font-weight:600;
-  cursor:pointer;white-space:nowrap;
-  display:flex;align-items:center;gap:8px;
-  transition:all 0.2s;
-  flex-shrink:0;
-}
+.pdf-chip{font-size:10.5px;color:var(--mist);border:1px solid rgba(255,255,255,0.08);padding:3px 10px;border-radius:4px;}
+.btn-pdf{height:46px;padding:0 2rem;background:var(--gold);color:var(--ink);border:none;border-radius:10px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:8px;transition:all 0.2s;flex-shrink:0;}
 .btn-pdf:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(232,160,32,0.35);}
 .btn-pdf:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
-
-/* disclaimer */
-.disclaimer{
-  margin-top:1.5rem;
-  padding:1.2rem 1.4rem;
-  background:rgba(255,255,255,0.02);
-  border:1px solid rgba(255,255,255,0.05);
-  border-radius:10px;
-  font-size:11px;color:var(--slate);line-height:1.7;
-}
-
-footer{
-  border-top:1px solid rgba(255,255,255,0.06);
-  padding:2rem 3rem;
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:1rem;
-}
-.footer-logo{
-  font-family:'Playfair Display',serif;
-  font-size:15px;font-weight:700;color:var(--white);
-}
+.disclaimer{margin-top:1.5rem;padding:1.2rem 1.4rem;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:10px;font-size:11px;color:var(--slate);line-height:1.7;}
+footer{border-top:1px solid rgba(255,255,255,0.06);padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--white);}
 .footer-logo em{color:var(--gold);font-style:normal;}
-.footer-links{display:flex;gap:1.5rem;}
-.footer-links a{font-size:11px;color:var(--slate);text-decoration:none;}
-.footer-links a:hover{color:var(--teal);}
+.footer-links{display:flex;gap:1.5rem;}.footer-links a{font-size:11px;color:var(--slate);text-decoration:none;}.footer-links a:hover{color:var(--teal);}
 .footer-copy{font-size:10.5px;color:var(--slate);}
 </style>
 </head>
@@ -518,173 +135,45 @@ footer{
     <a class="nav-link" href="https://solartruth.vercel.app">Solar Calculator</a>
     <a class="nav-link" href="https://rapidapi.com/bethelnedi/api/residential-solar-roi-api" target="_blank">API</a>
     <span class="nav-pill">IRA Audit Tool</span>
+    
   </div>
 </header>
 
-<!-- HERO + FORM -->
 <div class="hero">
   <div class="hero-left">
     <div class="hero-label">IRA 2022 — Pub.L. 117-169</div>
-    <h1>
-      Investment Tax Credit
-      <span class="gold line2">Intelligence.</span>
-    </h1>
-    <p class="hero-desc">
-      The only tool that correctly models the full IRA bonus adder stack —
-      energy community, domestic content, and low-income adders that can push
-      your effective ITC from 30% to 60%. Every figure cited to statute.
-      Download a CPA-grade memo in seconds.
-    </p>
+    <h1>Investment Tax Credit<span class="gold line2">Intelligence.</span></h1>
+    <p class="hero-desc">The only tool that correctly models the full IRA bonus adder stack — energy community, domestic content, and low-income adders that can push your effective ITC from 30% to 60%. Every figure cited to statute. Download a CPA-grade memo in seconds.</p>
     <div class="stat-row">
-      <div class="stat-item">
-        <span class="stat-num">60%</span>
-        <div class="stat-label">Maximum effective ITC</div>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">§48</span>
-        <div class="stat-label">Commercial code section</div>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">5</span>
-        <div class="stat-label">Stackable adders</div>
-      </div>
+      <div class="stat-item"><span class="stat-num">60%</span><div class="stat-label">Maximum effective ITC</div></div>
+      <div class="stat-item"><span class="stat-num">§48</span><div class="stat-label">Commercial code section</div></div>
+      <div class="stat-item"><span class="stat-num">5</span><div class="stat-label">Stackable adders</div></div>
     </div>
   </div>
 
   <div class="form-card">
-    <div class="form-card-header">
-      <div class="fch-dot"></div>
-      <h2>Project Details</h2>
-    </div>
+    <div class="form-card-header"><div class="fch-dot"></div><h2>Project Details</h2></div>
     <div class="form-inner">
-      <div class="form-row single">
-        <div class="field">
-          <label>Project / Client Name</label>
-          <input type="text" id="project-name" placeholder="e.g. Mountaineer Solar — WV Commercial"/>
-        </div>
+      <div class="form-row single"><div class="field"><label>Project / Client Name</label><input type="text" id="project-name" placeholder="e.g. Mountaineer Solar — WV Commercial"/></div></div>
+      <div class="form-row">
+        <div class="field"><label>US State</label><div class="sel-wrap"><select id="state"><option value="">Select state...</option><option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option><option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option></select></div></div>
+        <div class="field"><label>System Type</label><div class="sel-wrap"><select id="system-type"><option value="commercial">Commercial — Section 48</option><option value="residential">Residential — Section 25D</option></select></div></div>
       </div>
       <div class="form-row">
-        <div class="field">
-          <label>US State</label>
-          <div class="sel-wrap">
-            <select id="state">
-              <option value="">Select state...</option>
-              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
-              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
-              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
-              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
-              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
-              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
-              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
-              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
-              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
-              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
-              <option>WI</option><option>WY</option>
-            </select>
-          </div>
-        </div>
-        <div class="field">
-          <label>System Type</label>
-          <div class="sel-wrap">
-            <select id="system-type">
-              <option value="commercial">Commercial — Section 48</option>
-              <option value="residential">Residential — Section 25D</option>
-            </select>
-          </div>
-        </div>
+        <div class="field"><label>Gross System Cost</label><div class="prefix-field"><span class="prefix-sym">$</span><input type="number" id="system-cost" placeholder="250,000" min="1000"/></div></div>
+        <div class="field"><label>System Size (kW DC)</label><input type="number" id="system-kw" placeholder="100" min="0.5" step="0.5"/></div>
       </div>
       <div class="form-row">
-        <div class="field">
-          <label>Gross System Cost</label>
-          <div class="prefix-field">
-            <span class="prefix-sym">$</span>
-            <input type="number" id="system-cost" placeholder="250,000" min="1000"/>
-          </div>
-        </div>
-        <div class="field">
-          <label>System Size (kW DC)</label>
-          <input type="number" id="system-kw" placeholder="100" min="0.5" step="0.5"/>
-        </div>
+        <div class="field"><label>Annual Production (kWh)</label><input type="number" id="annual-kwh" placeholder="130,000" min="100"/></div>
+        <div class="field"><label>Install Year</label><div class="sel-wrap"><select id="install-year"><option value="2025">2025</option><option value="2026" selected>2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2032">2032 — Last year at 30%</option></select></div></div>
       </div>
-      <div class="form-row">
-        <div class="field">
-          <label>Annual Production (kWh)</label>
-          <input type="number" id="annual-kwh" placeholder="130,000" min="100"/>
-        </div>
-        <div class="field">
-          <label>Install Year</label>
-          <div class="sel-wrap">
-            <select id="install-year">
-              <option value="2025">2025</option>
-              <option value="2026" selected>2026</option>
-              <option value="2027">2027</option>
-              <option value="2028">2028</option>
-              <option value="2029">2029</option>
-              <option value="2030">2030</option>
-              <option value="2032">2032 — Last year at 30%</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div class="section-label">
-        IRA 2022 Bonus Adders
-        <span>Commercial §48 Only</span>
-      </div>
-
+      <div class="section-label">IRA 2022 Bonus Adders <span>Commercial §48 Only</span></div>
       <div class="adder-list" id="adder-list">
-        <div class="adder-toggle" id="tog-ec" onclick="toggleAdder('ec')">
-          <div class="adder-info">
-            <div class="adder-name">Energy Community Bonus</div>
-            <div class="adder-desc">Coal closure, fossil fuel MSA, or brownfield — IRS Notice 2023-29</div>
-          </div>
-          <span class="adder-pct" id="pct-ec">+10%</span>
-          <label class="switch" onclick="event.stopPropagation()">
-            <input type="checkbox" id="cb-ec" onchange="toggleAdder('ec')">
-            <div class="switch-track"></div>
-            <div class="switch-thumb"></div>
-          </label>
-        </div>
-        <div class="adder-toggle" id="tog-dc" onclick="toggleAdder('dc')">
-          <div class="adder-info">
-            <div class="adder-name">Domestic Content Bonus</div>
-            <div class="adder-desc">US-manufactured equipment, 40%+ content threshold — IRS Notice 2023-38</div>
-          </div>
-          <span class="adder-pct" id="pct-dc">+10%</span>
-          <label class="switch" onclick="event.stopPropagation()">
-            <input type="checkbox" id="cb-dc" onchange="toggleAdder('dc')">
-            <div class="switch-track"></div>
-            <div class="switch-thumb"></div>
-          </label>
-        </div>
-        <div class="adder-toggle" id="tog-li1" onclick="toggleAdder('li1')">
-          <div class="adder-info">
-            <div class="adder-name">Low-Income Community — Category 1</div>
-            <div class="adder-desc">Low-income census tract — DOE annual application required — Rev. Proc. 2023-27</div>
-          </div>
-          <span class="adder-pct" id="pct-li1">+10%</span>
-          <label class="switch" onclick="event.stopPropagation()">
-            <input type="checkbox" id="cb-li1" onchange="toggleAdder('li1')">
-            <div class="switch-track"></div>
-            <div class="switch-thumb"></div>
-          </label>
-        </div>
-        <div class="adder-toggle" id="tog-li2" onclick="toggleAdder('li2')">
-          <div class="adder-info">
-            <div class="adder-name">Low-Income Benefit — Category 2</div>
-            <div class="adder-desc">Serves affordable housing or federally subsidised building — DOE application required</div>
-          </div>
-          <span class="adder-pct" id="pct-li2">+20%</span>
-          <label class="switch" onclick="event.stopPropagation()">
-            <input type="checkbox" id="cb-li2" onchange="toggleAdder('li2')">
-            <div class="switch-track"></div>
-            <div class="switch-thumb"></div>
-          </label>
-        </div>
+        <div class="adder-toggle" id="tog-ec" onclick="toggleAdder('ec')"><div class="adder-info"><div class="adder-name">Energy Community Bonus</div><div class="adder-desc">Coal closure, fossil fuel MSA, or brownfield — IRS Notice 2023-29</div></div><span class="adder-pct" id="pct-ec">+10%</span><label class="switch" onclick="event.stopPropagation()"><input type="checkbox" id="cb-ec" onchange="toggleAdder('ec')"><div class="switch-track"></div><div class="switch-thumb"></div></label></div>
+        <div class="adder-toggle" id="tog-dc" onclick="toggleAdder('dc')"><div class="adder-info"><div class="adder-name">Domestic Content Bonus</div><div class="adder-desc">US-manufactured equipment, 40%+ content threshold — IRS Notice 2023-38</div></div><span class="adder-pct" id="pct-dc">+10%</span><label class="switch" onclick="event.stopPropagation()"><input type="checkbox" id="cb-dc" onchange="toggleAdder('dc')"><div class="switch-track"></div><div class="switch-thumb"></div></label></div>
+        <div class="adder-toggle" id="tog-li1" onclick="toggleAdder('li1')"><div class="adder-info"><div class="adder-name">Low-Income Community — Category 1</div><div class="adder-desc">Low-income census tract — DOE annual application required — Rev. Proc. 2023-27</div></div><span class="adder-pct" id="pct-li1">+10%</span><label class="switch" onclick="event.stopPropagation()"><input type="checkbox" id="cb-li1" onchange="toggleAdder('li1')"><div class="switch-track"></div><div class="switch-thumb"></div></label></div>
+        <div class="adder-toggle" id="tog-li2" onclick="toggleAdder('li2')"><div class="adder-info"><div class="adder-name">Low-Income Benefit — Category 2</div><div class="adder-desc">Serves affordable housing or federally subsidised building — DOE application required</div></div><span class="adder-pct" id="pct-li2">+20%</span><label class="switch" onclick="event.stopPropagation()"><input type="checkbox" id="cb-li2" onchange="toggleAdder('li2')"><div class="switch-track"></div><div class="switch-thumb"></div></label></div>
       </div>
-
       <button class="btn-calculate" id="calc-btn" onclick="runCalculation()">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         Calculate ITC Stack
@@ -693,461 +182,279 @@ footer{
   </div>
 </div>
 
-<!-- RESULTS AREA -->
 <div class="main-area">
-  <div class="loading" id="loading">
-    <div class="loader-ring"></div>
-    <p>Calculating incentive stack...</p>
-  </div>
-
+  <div class="loading" id="loading"><div class="loader-ring"></div><p>Calculating incentive stack...</p></div>
   <div class="results" id="results">
-
     <div class="results-grid">
-      <!-- LEFT: ITC summary -->
       <div class="panel">
-        <div class="panel-header">
-          <span class="panel-title">Effective ITC</span>
-          <span class="panel-badge success" id="r-badge">Commercial §48</span>
-        </div>
-        <div class="itc-hero">
-          <div class="itc-pct" id="r-itc-pct">—</div>
-          <div class="itc-label">Effective Credit Rate</div>
-          <div class="itc-amount" id="r-itc-amt">—</div>
-        </div>
+        <div class="panel-header"><span class="panel-title">Effective ITC</span><span class="panel-badge success" id="r-badge">Commercial §48</span></div>
+        <div class="itc-hero"><div class="itc-pct" id="r-itc-pct">—</div><div class="itc-label">Effective Credit Rate</div><div class="itc-amount" id="r-itc-amt">—</div></div>
         <div class="itc-breakdown">
-          <div class="breakdown-row">
-            <span class="br-label">Base ITC</span>
-            <div class="br-bar-wrap"><div class="br-bar base" id="bar-base" style="width:50%"></div></div>
-            <span class="br-val" id="bv-base">30%</span>
-          </div>
-          <div class="breakdown-row">
-            <span class="br-label">Bonus adders</span>
-            <div class="br-bar-wrap"><div class="br-bar adder" id="bar-adder" style="width:0%"></div></div>
-            <span class="br-val" id="bv-adder">0%</span>
-          </div>
+          <div class="breakdown-row"><span class="br-label">Base ITC</span><div class="br-bar-wrap"><div class="br-bar base" id="bar-base" style="width:50%"></div></div><span class="br-val" id="bv-base">30%</span></div>
+          <div class="breakdown-row"><span class="br-label">Bonus adders</span><div class="br-bar-wrap"><div class="br-bar adder" id="bar-adder" style="width:0%"></div></div><span class="br-val" id="bv-adder">0%</span></div>
         </div>
       </div>
-
-      <!-- RIGHT: adder stack -->
       <div class="panel">
-        <div class="panel-header">
-          <span class="panel-title">Bonus Adder Stack</span>
-          <span class="panel-badge gold" id="r-adder-count">0 adders applied</span>
-        </div>
+        <div class="panel-header"><span class="panel-title">Bonus Adder Stack</span><span class="panel-badge gold" id="r-adder-count">0 adders applied</span></div>
         <div class="adder-stack" id="r-adder-stack"></div>
       </div>
     </div>
-
-    <!-- Financial summary full width -->
     <div class="panel" style="margin-bottom:1.5rem;">
-      <div class="panel-header">
-        <span class="panel-title">Financial Summary</span>
-        <span class="panel-badge success" id="r-coverage">—% incentive coverage</span>
-      </div>
+      <div class="panel-header"><span class="panel-title">Financial Summary</span><span class="panel-badge success" id="r-coverage">—% incentive coverage</span></div>
       <div class="fin-table" id="fin-table"></div>
     </div>
-
-    <!-- Alert -->
     <div id="alert-area"></div>
-
-    <!-- PDF — Email gate -->
     <div class="pdf-panel" id="pdf-gate">
       <div class="pdf-left">
         <h3>Download Tax Memo</h3>
         <p>A professional ITC eligibility memorandum with full statutory citations — structured for CPA review and tax filing attachment.</p>
-        <div class="pdf-chips">
-          <span class="pdf-chip">Bonus adder analysis</span>
-          <span class="pdf-chip">State incentives</span>
-          <span class="pdf-chip">ITC schedule table</span>
-          <span class="pdf-chip">Statutory citations</span>
-          <span class="pdf-chip">Legal disclaimer</span>
-        </div>
+        <div class="pdf-chips"><span class="pdf-chip">Bonus adder analysis</span><span class="pdf-chip">State incentives</span><span class="pdf-chip">ITC schedule table</span><span class="pdf-chip">Statutory citations</span><span class="pdf-chip">Legal disclaimer</span></div>
       </div>
       <button class="btn-pdf" id="pdf-gate-btn" onclick="showEmailGate()">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download PDF Memo
       </button>
     </div>
-
-    <!-- Email capture modal -->
     <div id="email-modal" style="display:none;position:fixed;inset:0;background:rgba(8,17,30,0.85);z-index:500;align-items:center;justify-content:center;padding:1.5rem;backdrop-filter:blur(8px);">
       <div style="background:#0F1E30;border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:2.5rem;max-width:460px;width:100%;position:relative;">
         <button onclick="hideEmailGate()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;cursor:pointer;color:#4A6175;font-size:20px;line-height:1;">&#x2715;</button>
-
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;">
-          <div style="width:36px;height:36px;background:#E8A020;border-radius:8px;display:flex;align-items:center;justify-content:center;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#08111E" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          </div>
-          <div>
-            <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;">Get Your ITC Memo</div>
-            <div style="font-size:11px;color:#4A6175;margin-top:1px;">Free — no spam — unsubscribe anytime</div>
-          </div>
+          <div style="width:36px;height:36px;background:#E8A020;border-radius:8px;display:flex;align-items:center;justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#08111E" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+          <div><div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;">Get Your ITC Memo</div><div style="font-size:11px;color:#4A6175;margin-top:1px;">Free — no spam — unsubscribe anytime</div></div>
         </div>
-
-        <p style="font-size:13px;color:#8FA3B4;line-height:1.65;margin-bottom:1.5rem;">
-          Enter your details to receive the PDF memo. We may occasionally send updates on IRA policy changes that affect your tax credit calculations.
-        </p>
-
+        <p style="font-size:13px;color:#8FA3B4;line-height:1.65;margin-bottom:1.5rem;">Enter your details to receive the PDF memo. We may occasionally send updates on IRA policy changes that affect your tax credit calculations.</p>
         <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:1.2rem;">
-          <div style="display:flex;flex-direction:column;gap:5px;">
-            <label style="font-size:10px;font-weight:600;color:#4A6175;letter-spacing:0.8px;text-transform:uppercase;">Full Name</label>
-            <input type="text" id="gate-name" placeholder="Your name" style="height:42px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0 14px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#fff;outline:none;width:100%;"/>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:5px;">
-            <label style="font-size:10px;font-weight:600;color:#4A6175;letter-spacing:0.8px;text-transform:uppercase;">Work Email</label>
-            <input type="email" id="gate-email" placeholder="you@company.com" style="height:42px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0 14px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#fff;outline:none;width:100%;"/>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:5px;">
-            <label style="font-size:10px;font-weight:600;color:#4A6175;letter-spacing:0.8px;text-transform:uppercase;">Role</label>
-            <select id="gate-role" style="height:42px;background:#0F1E30;border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0 14px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#fff;outline:none;width:100%;appearance:none;">
-              <option value="">Select your role...</option>
-              <option value="cpa">CPA / Tax Advisor</option>
-              <option value="solar_developer">Solar Developer</option>
-              <option value="solar_installer">Solar Installer</option>
-              <option value="commercial_re">Commercial Real Estate</option>
-              <option value="investor">Investor / Fund Manager</option>
-              <option value="engineer">Engineer / Consultant</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
+          <div style="display:flex;flex-direction:column;gap:5px;"><label style="font-size:10px;font-weight:600;color:#4A6175;letter-spacing:0.8px;text-transform:uppercase;">Full Name</label><input type="text" id="gate-name" placeholder="Your name" style="height:42px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0 14px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#fff;outline:none;width:100%;"/></div>
+          <div style="display:flex;flex-direction:column;gap:5px;"><label style="font-size:10px;font-weight:600;color:#4A6175;letter-spacing:0.8px;text-transform:uppercase;">Work Email</label><input type="email" id="gate-email" placeholder="you@company.com" style="height:42px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0 14px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#fff;outline:none;width:100%;"/></div>
+          <div style="display:flex;flex-direction:column;gap:5px;"><label style="font-size:10px;font-weight:600;color:#4A6175;letter-spacing:0.8px;text-transform:uppercase;">Role</label><select id="gate-role" style="height:42px;background:#0F1E30;border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0 14px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#fff;outline:none;width:100%;appearance:none;"><option value="">Select your role...</option><option value="cpa">CPA / Tax Advisor</option><option value="solar_developer">Solar Developer</option><option value="solar_installer">Solar Installer</option><option value="commercial_re">Commercial Real Estate</option><option value="investor">Investor / Fund Manager</option><option value="engineer">Engineer / Consultant</option><option value="other">Other</option></select></div>
         </div>
-
-        <div style="font-size:10.5px;color:#4A6175;line-height:1.6;margin-bottom:1.2rem;padding:10px 12px;background:rgba(255,255,255,0.03);border-radius:6px;border:1px solid rgba(255,255,255,0.05);">
-          By submitting you consent to receive your PDF memo by email and occasional IRA policy updates from SolarTruth. No spam. Unsubscribe anytime. US professionals only.
-        </div>
-
+        <div style="font-size:10.5px;color:#4A6175;line-height:1.6;margin-bottom:1.2rem;padding:10px 12px;background:rgba(255,255,255,0.03);border-radius:6px;border:1px solid rgba(255,255,255,0.05);">By submitting you consent to receive your PDF memo by email and occasional IRA policy updates from SolarTruth. No spam. Unsubscribe anytime. US professionals only.</div>
         <button id="gate-submit-btn" onclick="submitGateAndDownload()" style="width:100%;height:46px;background:#E8A020;color:#08111E;border:none;border-radius:10px;font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all 0.2s;">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download My ITC Memo
         </button>
-
-        <div id="gate-success" style="display:none;margin-top:1rem;padding:12px;background:rgba(0,201,174,0.1);border:1px solid rgba(0,201,174,0.2);border-radius:8px;text-align:center;font-size:12.5px;color:#00C9AE;">
-          PDF downloading now. Check your inbox for a copy.
-        </div>
+        <div id="gate-success" style="display:none;margin-top:1rem;padding:12px;background:rgba(0,201,174,0.1);border:1px solid rgba(0,201,174,0.2);border-radius:8px;text-align:center;font-size:12.5px;color:#00C9AE;">PDF downloading now. Check your inbox for a copy.</div>
       </div>
     </div>
-
-    <div class="disclaimer">
-      <strong style="color:#6B7D95;">Disclaimer:</strong> This tool is for informational purposes only and does not constitute tax, legal, or financial advice.
-      Bonus adder eligibility requires project-specific verification. Energy community status must be confirmed at energycommunities.gov.
-      Domestic content requires manufacturer certification. Low-income adders require annual DOE application approval.
-      Always consult a licensed CPA or tax attorney before claiming any credit.
-      Generated by SolarTruth Incentive Intelligence — rapidapi.com/bethelnedi
-    </div>
+    <div class="disclaimer"><strong style="color:#6B7D95;">Disclaimer:</strong> This tool is for informational purposes only and does not constitute tax, legal, or financial advice. Bonus adder eligibility requires project-specific verification. Energy community status must be confirmed at energycommunities.gov. Domestic content requires manufacturer certification. Low-income adders require annual DOE application approval. Always consult a licensed CPA or tax attorney before claiming any credit. Generated by SolarTruth Incentive Intelligence — rapidapi.com/bethelnedi</div>
   </div>
 </div>
 
 <footer>
   <span class="footer-logo">Solar<em>Truth</em></span>
-  <div class="footer-links">
-    <a href="https://solartruth.vercel.app">Solar Calculator</a>
-    <a href="https://rapidapi.com/bethelnedi/api/residential-solar-roi-api" target="_blank">API Access</a>
-    <a href="https://amfumu-solar-incentive-api.hf.space/docs" target="_blank">Incentive API</a>
-  </div>
+  <div class="footer-links"><a href="https://solartruth.vercel.app">Solar Calculator</a><a href="https://rapidapi.com/bethelnedi/api/residential-solar-roi-api" target="_blank">API Access</a><a href="https://amfumu-solar-incentive-api.hf.space/docs" target="_blank">Incentive API</a></div>
   <span class="footer-copy">IRA 2022 — IRS Notice 2023-29, 2023-38 — Rev. Proc. 2023-27 — DSIRE (2024)</span>
 </footer>
 
 <script>
 const API = 'https://amfumu-ira-audit-tool.hf.space';
 let currentResult = null;
-
-const fmt = {
-  usd: v => '$' + Math.round(v).toLocaleString(),
-  pct: v => (v * 100).toFixed(0) + '%',
-};
+const fmt = {usd: v => '$' + Math.round(v).toLocaleString(), pct: v => (v * 100).toFixed(0) + '%'};
 function $(id){ return document.getElementById(id); }
 function set(id,v){ const e=$(id); if(e) e.textContent=v; }
 
-// ── TOGGLES ──────────────────────────────────────────────────────────────────
 function toggleAdder(key){
-  const cb  = $('cb-' + key);
-  const tog = $('tog-' + key);
-  // Sync checkbox if triggered from row click
-  if(document.activeElement !== cb) cb.checked = !cb.checked;
-  tog.classList.toggle('active', cb.checked);
-  // Li1 and Li2 mutually exclusive
-  if(key==='li1' && cb.checked){ $('cb-li2').checked=false; $('tog-li2').classList.remove('active'); }
-  if(key==='li2' && cb.checked){ $('cb-li1').checked=false; $('tog-li1').classList.remove('active'); }
+  const cb=$('cb-'+key),tog=$('tog-'+key);
+  if(document.activeElement!==cb) cb.checked=!cb.checked;
+  tog.classList.toggle('active',cb.checked);
+  if(key==='li1'&&cb.checked){$('cb-li2').checked=false;$('tog-li2').classList.remove('active');}
+  if(key==='li2'&&cb.checked){$('cb-li1').checked=false;$('tog-li1').classList.remove('active');}
 }
 
-// Disable adder toggles for residential
-$('system-type').addEventListener('change', function(){
-  const isRes = this.value === 'residential';
-  $('adder-list').style.opacity = isRes ? '0.35' : '1';
-  $('adder-list').style.pointerEvents = isRes ? 'none' : 'auto';
-  if(isRes){
-    ['ec','dc','li1','li2'].forEach(k=>{
-      $('cb-'+k).checked=false;
-      $('tog-'+k).classList.remove('active');
-    });
-  }
+$('system-type').addEventListener('change',function(){
+  const isRes=this.value==='residential';
+  $('adder-list').style.opacity=isRes?'0.35':'1';
+  $('adder-list').style.pointerEvents=isRes?'none':'auto';
+  if(isRes){['ec','dc','li1','li2'].forEach(k=>{$('cb-'+k).checked=false;$('tog-'+k).classList.remove('active');});}
 });
 
-// ── CALCULATION ───────────────────────────────────────────────────────────────
 async function runCalculation(){
-  const state = $('state').value;
-  const cost  = parseFloat($('system-cost').value);
-  const kw    = parseFloat($('system-kw').value);
-  const kwh   = parseFloat($('annual-kwh').value);
-  const type  = $('system-type').value;
-  const year  = parseInt($('install-year').value);
-
-  if(!state||!cost||!kw||!kwh){
-    alert('Please fill in state, system cost, system size, and annual production.');
-    return;
-  }
-
-  $('results').classList.remove('show');
-  $('loading').classList.add('show');
-  $('calc-btn').disabled = true;
-
-  const body = {
-    state, system_cost:cost, system_kw:kw,
-    annual_kwh:kwh, install_year:year, system_type:type,
-    energy_community: $('cb-ec').checked,
-    domestic_content:  $('cb-dc').checked,
-    low_income_category: $('cb-li2').checked?2:$('cb-li1').checked?1:null,
-  };
-
-  let data = null;
-  for(let i=0;i<3;i++){
-    try{
-      const ctrl=new AbortController();
-      const tid=setTimeout(()=>ctrl.abort(),55000);
-      const r=await fetch(API+'/full-stack',{
-        method:'POST',
-        headers:{'Content-Type':'application/json','X-API-Key':'PRO-INCENTIVE-XYZ'},
-        body:JSON.stringify(body),
-        signal:ctrl.signal,
-      });
-      clearTimeout(tid);
-      if(r.ok){data=await r.json();break;}
-    }catch(e){
-      if(i<2) await new Promise(res=>setTimeout(res,8000));
-    }
-  }
-
-  $('loading').classList.remove('show');
-  $('calc-btn').disabled=false;
-
+  const state=$('state').value,cost=parseFloat($('system-cost').value),kw=parseFloat($('system-kw').value),kwh=parseFloat($('annual-kwh').value),type=$('system-type').value,year=parseInt($('install-year').value);
+  if(!state||!cost||!kw||!kwh){alert('Please fill in state, system cost, system size, and annual production.');return;}
+  $('results').classList.remove('show');$('loading').classList.add('show');$('calc-btn').disabled=true;
+  const body={state,system_cost:cost,system_kw:kw,annual_kwh:kwh,install_year:year,system_type:type,energy_community:$('cb-ec').checked,domestic_content:$('cb-dc').checked,low_income_category:$('cb-li2').checked?2:$('cb-li1').checked?1:null};
+  let data=null;
+  for(let i=0;i<3;i++){try{const ctrl=new AbortController(),tid=setTimeout(()=>ctrl.abort(),55000);const r=await fetch(API+'/full-stack',{method:'POST',headers:{'Content-Type':'application/json','X-API-Key':'PRO-INCENTIVE-XYZ'},body:JSON.stringify(body),signal:ctrl.signal});clearTimeout(tid);if(r.ok){data=await r.json();break;}}catch(e){if(i<2)await new Promise(res=>setTimeout(res,8000));}}
+  $('loading').classList.remove('show');$('calc-btn').disabled=false;
   if(!data){alert('Server is waking up. Please wait 30 seconds and try again.');return;}
-
-  currentResult={data, project:{
-    project_name: $('project-name').value||'Solar Project',
-    state,system_type:type,
-    system_cost:cost,system_kw:kw,
-    annual_kwh:kwh,install_year:year,
-  }};
+  currentResult={data,project:{project_name:$('project-name').value||'Solar Project',state,system_type:type,system_cost:cost,system_kw:kw,annual_kwh:kwh,install_year:year}};
   renderResults(data);
 }
 
 function renderResults(d){
-  const itc     = d.federal_itc;
-  const summary = d.summary;
-
-  // Hero ITC
-  set('r-itc-pct', fmt.pct(itc.effective_itc_pct));
-  set('r-itc-amt', fmt.usd(itc.effective_itc_amount));
-  set('r-badge',   currentResult.project.system_type==='residential'?'Residential §25D':'Commercial §48');
-
-  // Breakdown bars
-  const basePct   = itc.base_itc_pct * 100;
-  const adderPct  = itc.bonus_adder_pct * 100;
-  const effPct    = itc.effective_itc_pct * 100;
-  $('bar-base').style.width  = (basePct  / effPct * 100) + '%';
-  $('bar-adder').style.width = (adderPct / effPct * 100) + '%';
-  set('bv-base',   basePct + '%');
-  set('bv-adder',  adderPct > 0 ? '+' + adderPct + '%' : '0%');
-
-  // Adder stack
-  const stack = $('r-adder-stack');
-  stack.textContent='';
+  const itc=d.federal_itc,summary=d.summary;
+  set('r-itc-pct',fmt.pct(itc.effective_itc_pct));set('r-itc-amt',fmt.usd(itc.effective_itc_amount));
+  set('r-badge',currentResult.project.system_type==='residential'?'Residential §25D':'Commercial §48');
+  const basePct=itc.base_itc_pct*100,adderPct=itc.bonus_adder_pct*100,effPct=itc.effective_itc_pct*100;
+  $('bar-base').style.width=(basePct/effPct*100)+'%';$('bar-adder').style.width=(adderPct/effPct*100)+'%';
+  set('bv-base',basePct+'%');set('bv-adder',adderPct>0?'+'+adderPct+'%':'0%');
+  const stack=$('r-adder-stack');stack.textContent='';
   const adders=(itc.adders_applied||[]).filter(a=>a.pct>0);
-
-  // Base row
   addStackRow(stack,'base','Base ITC','IRA 2022 §'+(currentResult.project.system_type==='residential'?'25D':'48'),fmt.pct(itc.base_itc_pct),'mist');
-  adders.forEach(a=>{
-    addStackRow(stack,'bonus',a.name,a.source.split(';')[0],'+'+fmt.pct(a.pct),'teal');
-  });
+  adders.forEach(a=>{addStackRow(stack,'bonus',a.name,a.source.split(';')[0],'+'+fmt.pct(a.pct),'teal');});
   addStackRow(stack,'total','Effective ITC','Combined credit rate',fmt.pct(itc.effective_itc_pct),'gold');
-
-  set('r-adder-count', adders.length + (adders.length===1?' adder':' adders') + ' applied');
-
-  // Financial table
-  const fin=$('fin-table');
-  fin.textContent='';
-  const rows=[
-    {k:'Gross system cost',    v:fmt.usd(summary.gross_system_cost),     cls:'white'},
-    {k:'Federal ITC',          v:'('+fmt.usd(summary.federal_itc)+')',   cls:'teal'},
-    {k:'State rebates',        v:summary.state_rebates>0?'('+fmt.usd(summary.state_rebates)+')':'—',cls:'teal'},
-    {k:'State tax credits',    v:summary.state_tax_credits>0?'('+fmt.usd(summary.state_tax_credits)+')':'—',cls:'teal'},
-    {k:'Total upfront incentives', v:fmt.usd(summary.total_upfront_incentives), cls:'teal'},
-    {k:'Net cost after incentives',v:fmt.usd(summary.net_cost_after_incentives),cls:'gold',total:true},
-  ];
-  rows.forEach(row=>{
-    const div=document.createElement('div');
-    div.className='fin-row'+(row.total?' total':'');
-    div.innerHTML=`<span class="fin-key">${row.k}</span><span class="fin-val ${row.cls}">${row.v}</span>`;
-    fin.appendChild(div);
-  });
-
-  set('r-coverage', summary.incentive_coverage_pct+'% incentive coverage');
-
-  // Alert
-  const alertArea=$('alert-area');
-  alertArea.textContent='';
-  const alert=itc.policy_alert;
-  if(alert){
-    const box=document.createElement('div');
-    box.className='alert-strip';
-    box.innerHTML=`<div class="alert-bar"></div><span>${alert}</span>`;
-    alertArea.appendChild(box);
-    alertArea.style.marginBottom='1.5rem';
-  }
-
-  $('results').classList.add('show');
-  setTimeout(()=>$('results').scrollIntoView({behavior:'smooth',block:'start'}),100);
+  set('r-adder-count',adders.length+(adders.length===1?' adder':' adders')+' applied');
+  const fin=$('fin-table');fin.textContent='';
+  [{k:'Gross system cost',v:fmt.usd(summary.gross_system_cost),cls:'white'},{k:'Federal ITC',v:'('+fmt.usd(summary.federal_itc)+')',cls:'teal'},{k:'State rebates',v:summary.state_rebates>0?'('+fmt.usd(summary.state_rebates)+')':'—',cls:'teal'},{k:'State tax credits',v:summary.state_tax_credits>0?'('+fmt.usd(summary.state_tax_credits)+')':'—',cls:'teal'},{k:'Total upfront incentives',v:fmt.usd(summary.total_upfront_incentives),cls:'teal'},{k:'Net cost after incentives',v:fmt.usd(summary.net_cost_after_incentives),cls:'gold',total:true}].forEach(row=>{const div=document.createElement('div');div.className='fin-row'+(row.total?' total':'');div.innerHTML=`<span class="fin-key">${row.k}</span><span class="fin-val ${row.cls}">${row.v}</span>`;fin.appendChild(div);});
+  set('r-coverage',summary.incentive_coverage_pct+'% incentive coverage');
+  const alertArea=$('alert-area');alertArea.textContent='';
+  if(itc.policy_alert){const box=document.createElement('div');box.className='alert-strip';box.innerHTML=`<div class="alert-bar"></div><span>${itc.policy_alert}</span>`;alertArea.appendChild(box);alertArea.style.marginBottom='1.5rem';}
+  $('results').classList.add('show');setTimeout(()=>$('results').scrollIntoView({behavior:'smooth',block:'start'}),100);
 }
 
-function addStackRow(parent,type,name,cite,pct,pctClass){
-  const div=document.createElement('div');
-  div.className='stack-row';
-  const iconLabel=type==='base'?'B':type==='total'?'=':'+';
-  div.innerHTML=`
-    <div class="stack-icon ${type}">${iconLabel}</div>
-    <div class="stack-info">
-      <div class="stack-name">${name}</div>
-      <div class="stack-cite">${cite}</div>
-    </div>
-    <span class="stack-pct ${pctClass}">${pct}</span>`;
-  parent.appendChild(div);
-}
+function addStackRow(parent,type,name,cite,pct,pctClass){const div=document.createElement('div');div.className='stack-row';div.innerHTML=`<div class="stack-icon ${type}">${type==='base'?'B':type==='total'?'=':'+'}</div><div class="stack-info"><div class="stack-name">${name}</div><div class="stack-cite">${cite}</div></div><span class="stack-pct ${pctClass}">${pct}</span>`;parent.appendChild(div);}
 
-// ── EMAIL GATE ────────────────────────────────────────────────────────────────
-function showEmailGate(){
-  if(!currentResult){alert('Please run a calculation first.');return;}
-  const modal = document.getElementById('email-modal');
-  modal.style.display='flex';
-  document.body.style.overflow='hidden';
-}
-
-function hideEmailGate(){
-  document.getElementById('email-modal').style.display='none';
-  document.body.style.overflow='';
-}
-
-document.addEventListener('click', function(e){
-  if(e.target.id==='email-modal') hideEmailGate();
-});
+function showEmailGate(){if(!currentResult){alert('Please run a calculation first.');return;}document.getElementById('email-modal').style.display='flex';document.body.style.overflow='hidden';}
+function hideEmailGate(){document.getElementById('email-modal').style.display='none';document.body.style.overflow='';}
+document.addEventListener('click',function(e){if(e.target.id==='email-modal')hideEmailGate();});
 
 async function submitGateAndDownload(){
-  const name  = document.getElementById('gate-name').value.trim();
-  const email = document.getElementById('gate-email').value.trim();
-  const role  = document.getElementById('gate-role').value;
-
-  if(!name || !email){
-    alert('Please enter your name and email.');
-    return;
-  }
-  if(!email.includes('@') || !email.includes('.')){
-    alert('Please enter a valid email address.');
-    return;
-  }
-
-  const btn = document.getElementById('gate-submit-btn');
-  btn.disabled=true;
-  btn.textContent='Processing...';
-
-  // Submit to Formspree
-  try{
-    const {data, project} = currentResult;
-    await fetch('https://formspree.io/f/xdawbwpe',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body: JSON.stringify({
-        type:           'ira_audit_lead',
-        name,
-        email,
-        role,
-        state:          project.state,
-        system_type:    project.system_type,
-        system_cost:    project.system_cost,
-        system_kw:      project.system_kw,
-        effective_itc:  data.federal_itc?.effective_itc_pct,
-        itc_amount:     data.federal_itc?.effective_itc_amount,
-        adders_applied: (data.federal_itc?.adders_applied||[]).filter(a=>a.pct>0).map(a=>a.name).join(', '),
-        submitted_at:   new Date().toISOString(),
-        source:         'IRA Audit Tool',
-      }),
-    });
-  } catch(e){
-    // Silently continue — still deliver the PDF
-  }
-
-  // Generate and download PDF directly
-  btn.textContent = 'Generating PDF...';
-
-  try{
-    const {data, project} = currentResult;
-    const r = await fetch('https://amfumu-ira-audit-tool.hf.space/generate-pdf',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({project_data: project, api_data: data}),
-    });
-
-    if(r.ok){
-      const blob = await r.blob();
-      const url  = URL.createObjectURL(blob);
-      const a    = document.createElement('a');
-      a.href     = url;
-      a.download = `IRA_ITC_Memo_${project.state}_${new Date().toISOString().slice(0,10)}.pdf`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-
-      document.getElementById('gate-success').style.display='block';
-      btn.style.display='none';
-      setTimeout(hideEmailGate, 3000);
-    } else {
-      const err = await r.text();
-      console.error('PDF error:', err);
-      alert('PDF generation failed. Please try again.');
-      btn.disabled=false;
-      btn.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download My ITC Memo';
-    }
-  } catch(e){
-    console.error('PDF fetch error:', e);
-    alert('Connection error. Please check the server is running and try again.');
-    btn.disabled=false;
-    btn.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download My ITC Memo';
-  }
+  const name=document.getElementById('gate-name').value.trim(),email=document.getElementById('gate-email').value.trim(),role=document.getElementById('gate-role').value;
+  if(!name||!email){alert('Please enter your name and email.');return;}
+  if(!email.includes('@')||!email.includes('.')){alert('Please enter a valid email address.');return;}
+  const btn=document.getElementById('gate-submit-btn');btn.disabled=true;btn.textContent='Processing...';
+  try{const{data,project}=currentResult;await fetch('https://formspree.io/f/xdawbwpe',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({type:'ira_audit_lead',name,email,role,state:project.state,system_type:project.system_type,system_cost:project.system_cost,system_kw:project.system_kw,effective_itc:data.federal_itc?.effective_itc_pct,itc_amount:data.federal_itc?.effective_itc_amount,adders_applied:(data.federal_itc?.adders_applied||[]).filter(a=>a.pct>0).map(a=>a.name).join(', '),submitted_at:new Date().toISOString(),source:'IRA Audit Tool'})});}catch(e){}
+  btn.textContent='Generating PDF...';
+  try{const{data,project}=currentResult;const r=await fetch('https://amfumu-ira-audit-tool.hf.space/generate-pdf',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({project_data:project,api_data:data})});if(r.ok){const blob=await r.blob(),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`IRA_ITC_Memo_${project.state}_${new Date().toISOString().slice(0,10)}.pdf`;document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);document.getElementById('gate-success').style.display='block';btn.style.display='none';setTimeout(hideEmailGate,3000);}else{alert('PDF generation failed. Please try again.');btn.disabled=false;btn.textContent='Download My ITC Memo';}}catch(e){alert('Connection error. Please try again.');btn.disabled=false;btn.textContent='Download My ITC Memo';}
 }
+</script>
 
-// ── PDF DOWNLOAD ──────────────────────────────────────────────────────────────
-async function downloadPDF(){
-  if(!currentResult){alert('Please run a calculation first.');return;}
-  const btn=$('pdf-btn');
-  btn.disabled=true;btn.textContent='Generating...';
-  try{
-    const {data,project}=currentResult;
-    const r=await fetch('https://amfumu-ira-audit-tool.hf.space/generate-pdf',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({project_data:project,api_data:data}),
-    });
-    if(r.ok){
-      const blob=await r.blob();
-      const url=URL.createObjectURL(blob);
-      const a=document.createElement('a');
-      a.href=url;
-      a.download=`IRA_ITC_Memo_${project.state}_${new Date().toISOString().slice(0,10)}.pdf`;
-      a.click();
-      URL.revokeObjectURL(url);
-    }else{alert('PDF generation failed. Please try again.');}
-  }catch(e){window.print();}
-  finally{btn.disabled=false;btn.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PDF Memo';}
+<style>
+.st-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);z-index:9000;display:none;align-items:center;justify-content:center;padding:1rem}
+.st-overlay.open{display:flex}
+.st-panel{background:#06101e;border:1px solid #1a2a45;width:100%;max-width:840px;max-height:90vh;overflow-y:auto;animation:stSlide 0.25s ease;position:relative;font-family:'IBM Plex Mono',monospace}
+@keyframes stSlide{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.st-ph{padding:1rem 1.5rem;border-bottom:1px solid #1a2a45;display:flex;align-items:center;justify-content:space-between;background:#040c18;position:sticky;top:0;z-index:2}
+.st-ph-title{font-size:10px;letter-spacing:0.16em;color:#3a5a80;text-transform:uppercase}
+.st-ph-close{background:none;border:none;color:#2a4060;font-size:1.2rem;cursor:pointer;padding:0 4px;line-height:1;transition:color 0.15s}
+.st-ph-close:hover{color:#E8A020}
+.st-ks{padding:1rem 1.5rem;border-bottom:1px solid #1a2a45;background:#060e1c}
+.st-ks-label{font-size:9px;letter-spacing:0.12em;color:#2a4060;text-transform:uppercase;margin-bottom:6px}
+.st-ks-row{display:flex;gap:8px;margin-bottom:6px}
+.st-ki{flex:1;background:#040c18;border:1px solid #1a2a45;color:#c8daf0;font-family:'IBM Plex Mono',monospace;font-size:12px;padding:9px 12px;outline:none;transition:border-color 0.15s}
+.st-ki:focus{border-color:#00C9AE}
+.st-ki::placeholder{color:#1a3060}
+.st-vb{background:#00C9AE;color:#08111E;border:none;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:9px 18px;cursor:pointer;transition:background 0.15s;white-space:nowrap}
+.st-vb:hover{background:#00e0c4}
+.st-ks-status{font-size:10px;min-height:16px}
+.st-ks-status.ok{color:#00C9AE}
+.st-ks-status.fail{color:#D94F4F}
+.st-ps{padding:1.2rem 1.5rem}
+.st-note{font-size:10px;color:#2a4060;line-height:1.6;padding:10px 12px;border:1px solid #1a2a45;background:#040c18;margin-bottom:1rem}
+.st-note strong{color:#5a7a9a}
+.st-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#1a2a45;border:1px solid #1a2a45;margin-bottom:1rem}
+.st-plan{background:#060e1c;padding:1.2rem;display:flex;flex-direction:column;position:relative;transition:background 0.15s}
+.st-plan:hover{background:#08121e}
+.st-plan.st-rec{border-top:2px solid #E8A020}
+.st-rec-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:#E8A020;color:#08111E;font-size:8px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 10px;display:flex;align-items:center;gap:4px;white-space:nowrap;font-family:'IBM Plex Sans',sans-serif}
+.st-pname{font-size:9px;letter-spacing:0.16em;color:#2a4060;text-transform:uppercase;margin-bottom:0.6rem}
+.st-price{font-size:1.7rem;font-weight:700;color:#c8daf0;line-height:1;margin-bottom:2px;font-family:'Playfair Display',serif}
+.st-price span{font-size:0.85rem;font-weight:400;color:#2a4060;font-family:'IBM Plex Mono',monospace}
+.st-period{font-size:9px;color:#2a4060;margin-bottom:0.9rem}
+.st-feats{list-style:none;display:flex;flex-direction:column;gap:5px;flex:1;margin-bottom:1rem}
+.st-feats li{font-size:10px;color:#3a5a70;display:flex;gap:6px;align-items:flex-start;line-height:1.4}
+.st-feats li::before{content:"--";color:#1a3060;flex-shrink:0}
+.st-feats li.y::before{content:"✓";color:#00C9AE}
+.st-feats li.s::before{content:"★";color:#E8A020}
+.st-cta{display:block;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:10px;text-decoration:none;cursor:pointer;transition:all 0.15s;border:none;width:100%}
+.st-cta.fr{background:#1a2a45;color:#3a5a70}
+.st-cta.fr:hover{background:#1e3050;color:#5a7a9a}
+.st-cta.pr{background:#00C9AE;color:#08111E}
+.st-cta.pr:hover{background:#00e0c4}
+.st-cta.ul{background:#E8A020;color:#08111E;font-weight:700}
+.st-cta.ul:hover{background:#f0b030}
+.st-cta.cur{background:#00C9AE;color:#08111E;cursor:default;opacity:0.8}
+.st-wl{padding:10px 12px;background:rgba(232,160,32,0.06);border:1px solid rgba(232,160,32,0.2);margin-bottom:1rem;display:flex;gap:10px;align-items:flex-start}
+.st-wl-text{font-size:10px;color:#806020;line-height:1.6}
+.st-wl-text strong{color:#E8A020}
+.st-ent{padding:10px 12px;background:#040c18;border:1px solid #1a2a45;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.st-ent-text{font-size:10px;color:#2a4060;line-height:1.5}
+.st-ent-text strong{color:#3a5a70}
+.st-ent-link{font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#00C9AE;text-decoration:none;border:1px solid rgba(0,201,174,0.2);padding:5px 12px;transition:all 0.15s;white-space:nowrap}
+.st-ent-link:hover{border-color:#00C9AE}
+@media(max-width:600px){.st-grid{grid-template-columns:1fr}}
+</style>
+
+<div id="st-trigger-wrap" style="display:inline-flex">
+  <button id="stPlanBtn" onclick="stOpen()" style="display:flex;align-items:center;gap:7px;background:transparent;border:1px solid rgba(0,201,174,0.3);color:#8FA3B4;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:5px 14px;cursor:pointer;transition:all 0.2s;border-radius:20px">
+    <span>&#10022;</span><span id="stBtnTxt">Plans &amp; Access</span>
+  </button>
+</div>
+
+<div class="st-overlay" id="stOverlay" onclick="stBgClose(event)">
+<div class="st-panel">
+  <div class="st-ph">
+    <div class="st-ph-title">IRA Audit Tool — Plans &amp; Access</div>
+    <button class="st-ph-close" onclick="stClose()">&#x2715;</button>
+  </div>
+  <div class="st-ks">
+    <div class="st-ks-label">Already subscribed on RapidAPI? Enter your key</div>
+    <div class="st-ks-row">
+      <input class="st-ki" id="stKeyIn" type="password" placeholder="Paste your RapidAPI key...">
+      <button class="st-vb" onclick="stVerify()">Verify</button>
+    </div>
+    <div class="st-ks-status" id="stKStatus"></div>
+  </div>
+  <div class="st-ps">
+    <div class="st-note"><strong>API access and tool access are separate.</strong> You do not need to use the web tool to use the API. Pro and Ultra subscribers get tool access as a perk at no extra cost. If you only need API access for a personal project or platform build, Pro is all you need.</div>
+    <div class="st-grid" id="stGrid"></div>
+    <div class="st-wl"><span style="font-size:1rem;flex-shrink:0;color:#E8A020">&#9733;</span><div class="st-wl-text"><strong>White label is Ultra only.</strong> Pro subscribers get full tool access but may not remove SolarTruth branding or embed the tool on a client-facing domain. Ultra includes white label rights and requires approval.</div></div>
+    <div class="st-ent"><div class="st-ent-text"><strong>Need all 7 APIs?</strong> Enterprise bundle with all APIs, custom SLA, and dedicated onboarding.</div><a href="https://buildingiq-nu.vercel.app#contact" target="_blank" class="st-ent-link">Contact</a></div>
+  </div>
+</div>
+</div>
+
+<script>
+var ST={pricingUrl:'https://rapidapi.com/bethelnedi/api/solar-incentive-intelligence-api/pricing',apiEndpoint:'https://amfumu-solar-incentive-api.hf.space',proPrice:'$29.99',ultraPrice:'$149',proFeats:["Full ITC stack — base + all adders","State incentives — all 50 states","PDF memo generation","1,000 API calls per hour"],ultraFeats:["White label IRA Audit Tool on your domain","CPA firm and tax advisor branding","Embed in client portals","Requires approval"],currentKey:'',currentPlan:'free'};
+function stOpen(){document.getElementById('stOverlay').classList.add('open');stRender();}
+function stClose(){document.getElementById('stOverlay').classList.remove('open');}
+function stBgClose(e){if(e.target===document.getElementById('stOverlay'))stClose();}
+async function stVerify(){
+  var key=document.getElementById('stKeyIn').value.trim();
+  var s=document.getElementById('stKStatus');
+  if(!key){s.textContent='Please paste your API key.';s.className='st-ks-status fail';return;}
+  s.textContent='Verifying...';s.className='st-ks-status';
+  var PRO=new Set(['PRO-KEY-SAMPLE-XYZ','PRO-OM-KEY-XYZ','PRO-AUDIT-KEY-XYZ','PRO-INCENTIVE-XYZ','PRO-EV-KEY-XYZ']);
+  var ULTRA=new Set(['ULTRA-KEY-SAMPLE-XYZ']);
+  var plan='free';
+  if(ULTRA.has(key)){plan='ultra';}
+  else if(PRO.has(key)||key.length>20){try{var r=await fetch(ST.apiEndpoint+'/health',{headers:{'X-API-Key':key}});plan=r.ok?'pro':'free';}catch(e){plan='pro';}}
+  if(plan!=='free'){
+    ST.currentKey=key;ST.currentPlan=plan;
+    var labels={pro:'Pro plan active',ultra:'Ultra plan active — white label enabled'};
+    s.textContent='✓ '+labels[plan]+'. Features unlocked.';s.className='st-ks-status ok';
+    var b=document.getElementById('stPlanBtn');
+    var c=plan==='ultra'?'#E8A020':'#00C9AE';b.style.borderColor=c;b.style.color=c;
+    document.getElementById('stBtnTxt').textContent=plan==='ultra'?'★ Ultra Active':'✓ Pro Active';
+    if(typeof onPlanActivated==='function')onPlanActivated(plan,key);
+    stRender();setTimeout(stClose,1600);
+  } else {s.textContent='Key not recognised. Check your RapidAPI subscription.';s.className='st-ks-status fail';}
 }
+function stRender(){
+  var cur=ST.currentPlan,pu=ST.pricingUrl;
+  var plans=[
+    {id:'free',name:'Free',price:'$0',period:'forever · no card needed',rec:false,ctaCls:cur==='free'?'cur':'fr',ctaTxt:cur==='free'?'Current plan':'Free plan',href:null,feats:[{y:true,t:'API access — 5 calls/min'},{t:'Tool access — paid plans only'},{t:'PDF memo generation'},{t:'White label rights'}]},
+    {id:'pro',name:'Pro',price:ST.proPrice,period:'per month · cancel anytime',rec:false,ctaCls:cur==='pro'?'cur':'pr',ctaTxt:cur==='pro'?'✓ Current plan':'Get Pro on RapidAPI',href:cur==='pro'?null:pu,feats:[{y:true,t:'Full API — 1,000 calls/hr'},{s:true,t:'Tool access included as perk'},...ST.proFeats.map(function(f){return{y:true,t:f};}),{t:'White label rights'}]},
+    {id:'ultra',name:'Ultra',price:ST.ultraPrice,period:'per month · requires approval',rec:true,ctaCls:cur==='ultra'?'cur':'ul',ctaTxt:cur==='ultra'?'★ Current plan':'★ Get Ultra — White Label',href:cur==='ultra'?null:pu,feats:[{y:true,t:'Everything in Pro'},...ST.ultraFeats.map(function(f){return{s:true,t:f};})]}
+  ];
+  document.getElementById('stGrid').innerHTML=plans.map(function(p){return '<div class="st-plan'+(p.rec?' st-rec':'')+'">'+
+    (p.rec?'<div class="st-rec-badge">★ Recommended for White Label</div>':'')+
+    '<div class="st-pname">'+p.name+'</div>'+
+    '<div class="st-price">'+p.price+'<span>/mo</span></div>'+
+    '<div class="st-period">'+p.period+'</div>'+
+    '<ul class="st-feats">'+p.feats.map(function(f){return '<li class="'+(f.s?'s':f.y?'y':'')+'">'+f.t+'</li>';}).join('')+'</ul>'+
+    (p.href?'<a href="'+p.href+'" target="_blank" class="st-cta '+p.ctaCls+'">'+p.ctaTxt+'</a>':'<button class="st-cta '+p.ctaCls+'"'+(p.id===cur?' disabled':'')+'>'+p.ctaTxt+'</button>')+
+    '</div>';}).join('');
+}
+stRender();
+</script>
+
+<script>
+(function(){
+  var wrap=document.getElementById('st-trigger-wrap');
+  var hdr=document.querySelector('.header-right');
+  if(wrap&&hdr){hdr.appendChild(wrap);}
+})();
 </script>
 </body>
 </html>
